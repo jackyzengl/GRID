@@ -29,18 +29,18 @@ Download our [dataset](https://github.com/jackyzengl/GRID_Dataset) to path ```da
 
 
 ## Preprocess dataset
-The parameter required by data proprocessor is defined in ```${workspace}/hparams.cfg``` [data_preprocessor] section. 
+The parameter required by the data preprocessor is defined in ```${workspace}/hparams.cfg``` [data_preprocessor] section. 
 Run data preprocessor to obtain all text embeddings required during training, 
 and save the data to the disk. The path of data to be preprocessed is ```${workspace}/dataset/``` by default. The pre-processor saves each processed sample as a ```.pt``` file under the directory ```${workspace}/preprocess_data/```.
-Please give one device only as instructor does not support multiple device.
+Please give one device only as instructor does not support multiple devices.
 ```
 python run_preprocess_data.py --gpu_devices <your device>
 ```
-If you want to specify the dataset location, pass it by argument ```data_path``` 
+If you want to specify the dataset location, pass it by argument ```--data_path``` 
 ```
 python run_preprocess_data.py --gpu_devices <your device> --data_path /path/to/data
 ```
-Use``` python run_preprocess_data.py --help``` to see more avaliable options.
+Use``` python run_preprocess_data.py --help``` to see more available options.
 
 ## Train a new model
 ### step 1 setup configuration
@@ -73,7 +73,7 @@ Specify the dataset location by argument ```--preprocessed_data_path``` if neces
 
 
 ## Predict from a checkpoint
-This will not train any models, but directly predict results from the checkpoint. 
+This will not train any models but directly predict results from the checkpoint. 
 
 The checkpoint file path requires a ```hparams.cfg``` or ```hparams.yaml``` at related path ```checkpoints/../..``` Typically, ```hparams.yaml``` is generated automatically when running ```train.py```.
 
@@ -85,24 +85,24 @@ Specify the dataset location by argument ```--preprocessed_data_path``` if neces
 
 ## Evaluation
 ### Subtask accuracy
-Our network takes an instruction, a scene graph and a robot graph as an input, and predicts a subtask which consists of an action and an object. We use subtask accuracy to evaluate the accuracy of each prediction.
+Our network takes an instruction, a scene graph and a robot graph as input, and predicts a subtask which consists of an action and an object. We use subtask accuracy to evaluate the accuracy of each prediction.
 
 #### Calculate subtask accuracy
-Running a prediction automatically calculate the subtask accuracy. 
-**Please use only one gpu device to inference results** to log the complete prediction labels.
+Running a prediction automatically calculates the subtask accuracy. 
+**Please use only one gpu device to infer results** to log the complete prediction labels.
 The prediction creates the ```sub_task_label.xlsx``` and ```accuracy.xlsx``` files in the new checkpoint directory ```logs/{experiment name}/version_{version_number}/```.
 
 ```sub_task_label.xlsx``` shows the prediction result for each sample, and ```accuracy.xlsx``` gives the overall accuracy calculation for all subtasks.
 
 ### Task accuracy
-Each task is associated with a series of subtasks. A task is considered as success when all predicted subtasks associated with the task are correct. 
+Each task is associated with a series of subtasks. A task is considered as successful when all predicted subtasks associated with the task are correct. 
 
 #### Calculate task accuracy
 To obtain task accuracy, change the ```raw_data_path_``` and ```output_root_path_``` variables in your ```run_evaluation.py``` file. 
 
-```raw_data_path_:``` the path of the raw dataset instead of the preprocessed data.
+```raw_data_path_:```is the path of the raw dataset instead of the preprocessed data.
 
-```output_root_path_:```  the folder of the subtask accuracy file generated in prediction we made in the previous step.
+```output_root_path_:```  the folder of the subtask accuracy file generated in the prediction we made in the previous step.
 
 Run
 ```
@@ -110,7 +110,7 @@ python run_evaluation.py
 ```
 The task accuracy is updated in ```accuracy.xlsx```. 
 
-The new file ```sub_task_accuracy.xlsx``` gives the task accuracies for tasks associated with different number of subtasks.
+The new file ```sub_task_accuracy.xlsx``` gives the task accuracies for tasks associated with different numbers of subtasks.
 
 ## TODO
 - [x] Release training codes.
