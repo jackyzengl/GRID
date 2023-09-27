@@ -68,7 +68,7 @@ With the default pre-processed data location, use:
 ```
 python train.py --fit_flag True --from_ckpt_flag True --ckpt_path /path/to/checkpoint
 ```
-Specify the dataset location by argument ```--preprocessed_data_path``` if neccessary.
+Specify the dataset location by argument ```--preprocessed_data_path``` if necessary.
 <br/>
 
 
@@ -81,7 +81,7 @@ With the default data location, use:
 ```
 python train.py --fit_flag False --from_ckpt_flag True --ckpt_path /path/to/checkpoint
 ```
-Specify the dataset location by argument ```--preprocessed_data_path``` if neccessary.
+Specify the dataset location by argument ```--preprocessed_data_path``` if necessary.
 
 ## Evaluation
 ### Subtask accuracy
