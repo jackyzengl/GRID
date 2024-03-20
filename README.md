@@ -121,10 +121,10 @@ The new file ```sub_task_accuracy.xlsx``` gives the task accuracies for tasks as
 ## Citation
 If you find the code useful, please consider citing:
 ```
-@article{ni2023grid,
-  title={GRID: Scene-Graph-based Instruction-driven Robotic Task Planning},
-  author={Ni, Zhe and Deng, Xiao-Xin and Tai, Cong and Zhu, Xin-Yue and Wu, Xiang and Liu, Yong-Jin and Zeng, Long},
-  journal={arXiv preprint arXiv:2309.07726},
-  year={2023}
+@article{ni2024grid,
+      title={GRID: Scene-Graph-based Instruction-driven Robotic Task Planning}, 
+      author={Zhe Ni and Xiaoxin Deng and Cong Tai and Xinyue Zhu and Qinghongbing Xie and Weihang Huang and Xiang Wu and Long Zeng},
+      journal={arXiv preprint arXiv:2309.07726},
+      year={2024}
 }
 ```
