@@ -124,7 +124,7 @@ If you find the code useful, please consider citing:
 @article{ni2024grid,
       title={GRID: Scene-Graph-based Instruction-driven Robotic Task Planning}, 
       author={Zhe Ni and Xiaoxin Deng and Cong Tai and Xinyue Zhu and Qinghongbing Xie and Weihang Huang and Xiang Wu and Long Zeng},
-      journal={arXiv preprint arXiv:2309.07726},
+      conference={The IEEE/RSJ International Conference on Intelligent Robots and Systems},
       year={2024}
 }
 ```
